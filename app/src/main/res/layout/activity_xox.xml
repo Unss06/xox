@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".xox">
+    tools:context=".xox"
+    android:background="@drawable/xox">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,12 +29,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="?android:attr/galleryItemBackground"
+                android:alpha="0.75"
+                android:background="@android:drawable/editbox_background_normal"
                 android:gravity="center"
                 android:lineSpacingExtra="8sp"
                 android:textAllCaps="false"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                android:textColor="@color/colorAccent"
                 android:textSize="30sp"
                 android:textStyle="bold|italic"
                 android:typeface="serif" />
@@ -52,10 +53,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_dark_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
             <Button
@@ -63,10 +64,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_light_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
             <Button
@@ -74,10 +75,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_dark_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
 
@@ -95,10 +96,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_light_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
 
@@ -107,10 +108,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_dark_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
 
@@ -119,10 +120,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_light_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
         </LinearLayout>
@@ -136,15 +137,14 @@
 
             <Button
                 android:id="@+id/B41"
-                style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_dark_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
                 android:typeface="serif"
+                android:alpha="0.75"
                 android:visibility="visible" />
 
             -
@@ -154,10 +154,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_light_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
 
@@ -166,10 +166,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:drawable/alert_dark_frame"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
                 android:textSize="72sp"
+                android:alpha="0.75"
                 android:typeface="serif" />
 
 

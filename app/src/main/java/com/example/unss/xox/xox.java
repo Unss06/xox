@@ -1,13 +1,12 @@
 package com.example.unss.xox;
 
-import android.animation.ArgbEvaluator;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.content.Intent;
 
 
 public class xox extends AppCompatActivity implements View.OnClickListener {
@@ -27,6 +26,10 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent X=getIntent();
+        Intent O=getIntent();
+        x=X.getIntExtra("X",x);
+        o=O.getIntExtra("O",o);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xox);
         b21 = (Button) findViewById(R.id.B21);
@@ -62,11 +65,10 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
                 timer--;
                 } else if (timer % 2 == 0){
                 b21.setText("X");
-                b21.setTextColor(Color.argb(255,150,74,20));
             }
                 else {
                 b21.setText("O");
-                b21.setTextColor(Color.argb(255,30,80,49));
+
 
             }
             }
@@ -80,11 +82,11 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
             else if (timer % 2 == 0){
                 b22.setText("X");
-                b22.setTextColor(Color.argb(255,150,74,20));
+
             }
             else {b22.setText("O");
-                b22.setTextColor(Color.argb(255,30,80,49));}
-        }
+
+        }}
 
         else if (v.getId() == b23.getId()) {
             if (b23.getText() == "X"){
@@ -96,9 +98,9 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
             else if (timer % 2 == 0){
                 b23.setText("X");
-                b23.setTextColor(Color.argb(255,150,74,20));}
+               }
             else {b23.setText("O");
-                b23.setTextColor(Color.argb(255,30,80,49));}
+               }
         } else if (v.getId() == b31.getId()) {
             if (b31.getText() == "X"){
                 timer--;
@@ -110,9 +112,9 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
             else if (timer % 2 == 0){
                 b31.setText("X");
-                b31.setTextColor(Color.argb(255,150,74,20));}
+                }
             else {b31.setText("O");
-                b31.setTextColor(Color.argb(255,30,80,49));}
+                }
         } else if (v.getId() == b32.getId()) {
             if (b32.getText() == "X")
                 timer--;
@@ -124,9 +126,9 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
             else if (timer % 2 == 0){
                 b32.setText("X");
-                b32.setTextColor(Color.argb(255,150,74,20));}
+              }
             else {b32.setText("O");
-                b32.setTextColor(Color.argb(255,30,80,49));}
+               }
         }else if (v.getId() == b33.getId()) {
             if (b33.getText() == "X"){
                 timer--;
@@ -138,10 +140,10 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
             else if (timer % 2 == 0){
                 b33.setText("X");
-                b33.setTextColor(Color.argb(255,150,74,20));}
+                }
             else {
                 b33.setText("O");
-                b33.setTextColor(Color.argb(255,30,80,49));}
+                }
         } else if (v.getId() == b41.getId()) {
             if (b41.getText() == "X"){
                 timer--;
@@ -152,10 +154,10 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
                 timer--;}
 
             else if (timer % 2 == 0){
-                b41.setTextColor(Color.argb(255,150,74,20));
+                ;
                 b41.setText("X");}
             else {b41.setText("O");
-                b41.setTextColor(Color.argb(255,30,80,49));
+                ;
             }
         } else if (v.getId() == b42.getId()) {
             if (b42.getText() == "X"){
@@ -167,10 +169,10 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
                 timer--;}
 
             else if (timer % 2 == 0){
-                b42.setTextColor(Color.argb(255,150,74,20));
+                ;
                 b42.setText("X");}
             else {
-                b42.setTextColor(Color.argb(255,30,80,49));
+                ;
                 b42.setText("O");
         }}
         else if (v.getId() == b43.getId())
@@ -184,75 +186,149 @@ public class xox extends AppCompatActivity implements View.OnClickListener {
 
             else if (timer % 2 == 0){
                 b43.setText("X");
-                b43.setTextColor(Color.argb(255,150,74,20));}
+                }
             else {b43.setText("O");
-                b43.setTextColor(Color.argb(255,30,80,49));}
+                }
         }
         if (b21.getText()==b32.getText()&&b32.getText()==b43.getText()&&(b21.getText()=="X"||b21.getText()=="O")){
-            if(b21.getText()=="X"){ x++;}
-            else {o++;}
+            if(b21.getText()=="X"){
+                x++;
+                tw.setText("X="+x+" || O="+o);
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","O".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
         }
         else if (b21.getText()==b22.getText()&&b22.getText()==b23.getText()&&(b21.getText()=="X"||b21.getText()=="O")){
-            if(b21.getText()=="X"){ x++;}
-            else {o++;}
-            tw.setText("X="+x+" || O="+o);
-            recreate();
+            if(b21.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
         }
         else if (b31.getText()==b32.getText()&&b32.getText()==b33.getText()&&(b31.getText()=="X"||b31.getText()=="O")){
-            if(b31.getText()=="X"){ x++;}
-            else {o++;}
+            if(b31.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
         }
         else if (b41.getText()==b42.getText()&&b42.getText()==b43.getText()&&(b41.getText()=="X"||b41.getText()=="O")){
-            if(b41.getText()=="X"){ x++;}
-            else {o++;}
+            if(b41.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
-        }
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
+    }
         else if (b41.getText()==b32.getText()&&b32.getText()==b23.getText()&&(b41.getText()=="X"||b41.getText()=="O")){
 
-            if(b41.getText()=="X"){ x++;}
-            else {o++;}
+            if(b41.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
         }
         else if (b21.getText()==b31.getText()&&b31.getText()==b41.getText()&&(b41.getText()=="X"||b41.getText()=="O")){
 
-            if(b21.getText()=="X"){ x++;}
-            else {o++;}
+            if(b21.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
         }
         else if (b22.getText()==b32.getText()&&b32.getText()==b42.getText()&&(b22.getText()=="X"||b22.getText()=="O")){
 
-            if(b22.getText()=="X"){ x++;}
-            else {o++;}
+            if(b22.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
         }
         else if (b23.getText()==b33.getText()&&b33.getText()==b43.getText()&&(b23.getText()=="X"||b23.getText()=="O")){
 
-            if(b23.getText()=="X"){ x++;}
-            else {o++;}
+            if(b23.getText()=="X"){ x++;
+                Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+                Result.putExtra("winner","X".toString());
+                Result.putExtra("X",x);
+                Result.putExtra("O",o);
+                startActivity(Result);}
+            else {o++;
             tw.setText("X="+x+" || O="+o);
-            recreate();
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","O".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);}
         }
         else if((b21.getText()=="X"||b21.getText()=="O")&&(b22.getText()=="X"||b22.getText()=="O")&&(b23.getText()=="X"||b23.getText()=="O")&&(b31.getText()=="X"||b31.getText()=="O")&&(b32.getText()=="X"||b32.getText()=="O")&&(b33.getText()=="X"||b33.getText()=="O")&&(b41.getText()=="X"||b41.getText()=="O")&&(b42.getText()=="X"||b42.getText()=="O")&&(b43.getText()=="X"||b43.getText()=="O")) {
-        recreate();
+
+            Intent Result=new Intent(xox.this, com.example.unss.xox.Result.class);
+            Result.putExtra("winner","none".toString());
+            Result.putExtra("X",x);
+            Result.putExtra("O",o);
+            startActivity(Result);
         }
-        else timer++;
+
+         timer++;
 
     }
 
-    public void finish(View view){
-    End.finishapp(this);
-    }
-    public void recreat1e(View view){
-        End.restartapp(this);
-    }
+
     public void recreate(){
 
         b21.setText("");
