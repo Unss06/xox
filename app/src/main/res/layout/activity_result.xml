@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Result"
+    android:background="@drawable/xox">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:orientation="vertical"></LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/Twinner"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="100dp"
+                android:layout_weight="10"
+                android:alpha="0.75"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center"
+                android:text="TextView"
+                android:textAllCaps="false"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/Bcont"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="100dp"
+                android:layout_weight="0.5"
+                android:text="Continue"
+                android:alpha="0.75"
+                android:typeface="serif" />
+
+            <Button
+                android:id="@+id/Bmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="0.5"
+                android:text="Main Menu"
+                android:alpha="0.75"
+                android:typeface="serif" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:orientation="vertical"></LinearLayout>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
